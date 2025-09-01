@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/web-app-cello/static/css/main.d1940c74.css",
+    "main.js": "/web-app-cello/static/js/main.5a77d34c.js",
+    "index.html": "/web-app-cello/index.html",
+    "main.d1940c74.css.map": "/web-app-cello/static/css/main.d1940c74.css.map",
+    "main.5a77d34c.js.map": "/web-app-cello/static/js/main.5a77d34c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d1940c74.css",
+    "static/js/main.5a77d34c.js"
+  ]
+}
