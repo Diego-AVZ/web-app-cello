@@ -1,0 +1,203 @@
+.home {
+  background-color: #ffffff;
+  min-height: calc(100vh - 120px);
+  padding: 40px 0;
+}
+
+.home-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.content-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Columna izquierda */
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.texto-vacio-section {
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #bdc3c7;
+  font-style: italic;
+  margin-bottom: 25px;
+  font-family: 'Georgia', serif;
+}
+
+.main-quote {
+  font-size: 1.1rem;
+  color: #2c3e50;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-family: 'Georgia', serif;
+  font-style: normal;
+  border-left: none;
+  padding: 0;
+}
+
+.quote-source {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.source-title {
+  font-weight: bold;
+  color: #2c3e50;
+  font-size: 0.95rem;
+  font-family: 'Georgia', serif;
+}
+
+.source-author {
+  color: #2c3e50;
+  font-size: 0.9rem;
+  font-family: 'Georgia', serif;
+}
+
+/* Testimonios */
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.testimonial {
+  background-color: #f8f9fa;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.testimonial-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-family: 'Arial', sans-serif;
+}
+
+.testimonial-quote {
+  font-size: 1rem;
+  color: #2c3e50;
+  line-height: 1.5;
+  font-family: 'Georgia', serif;
+  font-style: normal;
+  border-left: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bold-name {
+  font-weight: bold;
+}
+
+/* Columna central - Imagen */
+.center-column {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.cellist-image-placeholder {
+  width: 100%;
+  height: 600px;
+  background-color: #f5f5f5;
+  border: 2px dashed #ddd;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.image-placeholder-text {
+  color: #999;
+}
+
+.placeholder-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.image-placeholder-text p {
+  margin: 5px 0;
+  font-family: 'Georgia', serif;
+}
+
+.placeholder-subtitle {
+  font-style: italic;
+  color: #777;
+}
+
+/* Columna derecha */
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.vitae-section {
+  background-color: #f8f9fa;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.vitae-text {
+  font-size: 1rem;
+  color: #2c3e50;
+  line-height: 1.5;
+  font-family: 'Georgia', serif;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .content-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  
+  .center-column {
+    grid-column: 1 / -1;
+    order: -1;
+  }
+  
+  .cellist-image-placeholder {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .cellist-image-placeholder {
+    height: 300px;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .testimonial {
+    padding: 20px;
+  }
+}
