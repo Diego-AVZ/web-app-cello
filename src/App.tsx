@@ -9,7 +9,7 @@ import './App.css';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/web-app-cello">
       <div className="App">
         <Navigation />
         <main className="main-content">
