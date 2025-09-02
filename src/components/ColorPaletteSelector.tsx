@@ -32,7 +32,7 @@ const ColorPaletteSelector: React.FC = () => {
     return null;
   }
   
-  const { theme, setCustomPalette, customColors } = themeContext;
+  const { setCustomPalette, customColors } = themeContext;
 
   const darkPalettes: ColorPalette[] = [
     {
