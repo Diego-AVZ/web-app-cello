@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { ThemeContext } from '../context/ThemeContext';
+import ColorPaletteSelector from './ColorPaletteSelector';
 import './Navigation.css';
 
 const Navigation: React.FC = () => {
   const location = useLocation();
+  const themeContext = useContext(ThemeContext);
+  
+  // Early return if context is not available
+  if (!themeContext) {
+    return null;
+  }
+  
+  const { theme, toggleTheme, cardStyle, toggleCardStyle } = themeContext;
 
   const navItems = [
     { path: '/', label: 'Inicio' },
@@ -33,11 +43,18 @@ const Navigation: React.FC = () => {
             </li>
           ))}
         </ul>
-        <div className="add-section-btn">
-          <span className="btn-icon">+</span>
-          <span className="btn-text">Añadir sección</span>
-        </div>
+        <button className="theme-toggle-btn" onClick={toggleTheme}>
+          {theme === 'dark' ? '☀️' : '🌙'}
+        </button>
+        <button 
+          className="card-style-toggle-btn" 
+          onClick={toggleCardStyle}
+          title={cardStyle === 'inverted' ? 'Cambiar a cajas normales' : 'Cambiar a cajas invertidas'}
+        >
+          {cardStyle === 'inverted' ? '📦' : '⬜'}
+        </button>
       </div>
+      <ColorPaletteSelector />
     </nav>
   );
 };
