@@ -1,32 +1,39 @@
 .navigation {
-  background: var(--nav-bg);
-  backdrop-filter: blur(10px);
-  padding: 1rem 2rem;
+  background-color: #0a0a0a;
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 1px solid var(--border-color);
-  box-shadow: 0 2px 20px var(--shadow-color);
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(205, 133, 63, 0.2);
 }
 
 .nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 .logo-section {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 15px;
 }
 
 .logo-icon {
-  font-size: 2.5rem;
-  color: var(--accent-primary);
-  filter: drop-shadow(0 0 10px var(--accent-primary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-image {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 8px;
+  filter: brightness(1.1) contrast(1.1);
 }
 
 .logo-text {
@@ -35,20 +42,31 @@
 }
 
 .logo-name {
-  color: var(--text-primary);
-  font-size: 1.5rem;
-  font-weight: 700;
   margin: 0;
-  letter-spacing: -0.5px;
+  color: #cd853f;
+  font-size: 28px;
+  font-weight: 600;
   font-family: 'Georgia', serif;
+  line-height: 1;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.logo-surname {
+  margin: 0;
+  color: #deb887;
+  font-size: 24px;
+  font-weight: 500;
+  font-family: 'Georgia', serif;
+  line-height: 1;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .nav-menu {
   display: flex;
   list-style: none;
-  gap: 2rem;
   margin: 0;
   padding: 0;
+  gap: 40px;
 }
 
 .nav-item {
@@ -56,28 +74,25 @@
 }
 
 .nav-link {
-  color: var(--text-secondary);
   text-decoration: none;
-  font-weight: 500;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.75rem;
+  color: #e0e0e0;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 10px 0;
   transition: all 0.3s ease;
   position: relative;
-  font-size: 0.95rem;
-  letter-spacing: 0.5px;
   font-family: 'Arial', sans-serif;
+  opacity: 0.8;
 }
 
 .nav-link:hover {
-  color: var(--text-primary);
-  background: var(--bg-secondary);
-  transform: translateY(-2px);
+  color: #deb887;
+  opacity: 1;
 }
 
 .nav-link.active {
-  color: var(--accent-primary);
-  background: var(--bg-tertiary);
-  box-shadow: 0 4px 15px var(--shadow-color);
+  color: #deb887;
+  opacity: 1;
 }
 
 .nav-link.active::after {
@@ -87,74 +102,64 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: var(--accent-primary);
+  background-color: #deb887;
+  box-shadow: 0 0 8px rgba(222, 184, 135, 0.4);
 }
 
-.theme-toggle-btn {
-  background: var(--bg-secondary);
-  color: var(--text-primary);
-  border: 2px solid var(--border-color);
-  padding: 0.75rem;
-  border-radius: 50%;
+.text-editor-btn {
+  background: linear-gradient(135deg, #cd853f 0%, #deb887 100%);
+  color: #000000;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
   cursor: pointer;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
   transition: all 0.3s ease;
-  font-size: 1.2rem;
-  width: 50px;
-  height: 50px;
   display: flex;
   align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 8px rgba(205, 133, 63, 0.3);
+  min-width: 120px;
   justify-content: center;
 }
 
-.theme-toggle-btn:hover {
-  background: var(--accent-primary);
-  color: white;
-  border-color: var(--accent-primary);
-  transform: scale(1.1);
-  box-shadow: 0 0 20px var(--accent-primary);
+.text-editor-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(205, 133, 63, 0.4);
 }
 
-.card-style-toggle-btn {
-  background: var(--bg-secondary);
-  color: var(--text-primary);
-  border: 2px solid var(--border-color);
-  padding: 0.75rem;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 1.2rem;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 10px;
-}
-
-.card-style-toggle-btn:hover {
-  background: var(--accent-primary);
-  color: white;
-  border-color: var(--accent-primary);
-  transform: scale(1.1);
-  box-shadow: 0 0 20px var(--accent-primary);
+.text-editor-btn:active {
+  transform: translateY(0);
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
-  .navigation {
-    padding: 1rem;
-  }
-  
   .nav-container {
     flex-direction: column;
-    gap: 1rem;
+    gap: 20px;
   }
   
   .nav-menu {
-    gap: 1rem;
+    gap: 20px;
   }
   
   .logo-name {
-    font-size: 1.2rem;
+    font-size: 24px;
+  }
+  
+  .logo-surname {
+    font-size: 20px;
+  }
+  
+  .logo-image {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .text-editor-btn {
+    width: 100%;
+    justify-content: center;
   }
 }

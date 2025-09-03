@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
+import { FontStyleProvider } from './context/FontStyleContext';
 import Navigation from './components/Navigation';
 import Home from './pages/Home';
 import Bio from './pages/Bio';
@@ -11,19 +12,21 @@ import './App.css';
 function App() {
   return (
     <ThemeProvider>
-      <Router basename="/web-app-cello">
-        <div className="App">
-          <Navigation />
-          <main className="main-content">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/bio" element={<Bio />} />
-              <Route path="/out-the-music" element={<OutTheMusic />} />
-              <Route path="/contacto" element={<Contacto />} />
-            </Routes>
-          </main>
-        </div>
-      </Router>
+      <FontStyleProvider>
+        <Router basename="/web-app-cello">
+          <div className="App">
+            <Navigation />
+            <main className="main-content">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/bio" element={<Bio />} />
+                <Route path="/out-the-music" element={<OutTheMusic />} />
+                <Route path="/contacto" element={<Contacto />} />
+              </Routes>
+            </main>
+          </div>
+        </Router>
+      </FontStyleProvider>
     </ThemeProvider>
   );
 }
