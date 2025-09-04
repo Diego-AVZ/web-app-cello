@@ -1,8 +1,13 @@
 import React from 'react';
 import './Home.css';
 import ImageCarousel from '../components/ImageCarousel';
+import AmazonDiscs from '../components/AmazonDiscs';
 import a1Image from '../assets/images/a1.png';
 import a2Image from '../assets/images/a2.png';
+import disc1Image from '../assets/images/disc1.jpg';
+import disc2Image from '../assets/images/disc2.webp';
+import disc3Image from '../assets/images/disc3.webp';
+import disc4Image from '../assets/images/disc4.jpg';
 
 const Home: React.FC = () => {
   // Array de imágenes para el carrusel
@@ -20,6 +25,46 @@ const Home: React.FC = () => {
       alt: 'Adolfo Gutiérrez Arenas - Violonchelista',
       title: 'Adolfo Gutiérrez Arenas',
       subtitle: 'Violonchelista'
+    }
+  ];
+
+  // Tus discos reales con imágenes
+  const discs = [
+    {
+      id: 'beethoven-evolution',
+      title: 'Beethoven Evolution',
+      artist: 'Adolfo Gutiérrez Arenas & Christopher Park',
+      year: '2020',
+      coverImage: disc1Image,
+      amazonUrl: 'https://www.amazon.es/Arenas-Park-Beethoven-Evolution-Christopher/dp/B08DC5VXYM/ref=sr_1_fkmr0_1?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=arenas+park+beethoven+cd&qid=1605352859&sr=8-1-fkmr0',
+      description: 'Obras de Beethoven para violonchelo y piano'
+    },
+    {
+      id: 'bach-cello-suites',
+      title: 'Bach: Cello Suites Nos. 1-6',
+      artist: 'Adolfo Gutiérrez Arenas',
+      year: '2008',
+      coverImage: disc2Image,
+      amazonUrl: 'https://www.prestomusic.com/classical/products/7962522--bach-j-s-cello-suites-nos-1-6-bwv1007-1012',
+      description: 'Las seis suites para violonchelo solo de Johann Sebastian Bach'
+    },
+    {
+      id: 'cello-works',
+      title: 'Cello Works',
+      artist: 'Adolfo Gutiérrez Arenas & Luis Fernando Pérez',
+      year: '2019',
+      coverImage: disc3Image,
+      amazonUrl: 'https://www.prestomusic.com/classical/products/7933176--cello-works',
+      description: 'Obras de Rachmaninoff, Piazzolla y otros compositores'
+    },
+    {
+      id: 'dvorak-cello-works',
+      title: 'Dvořák: Cello Works',
+      artist: 'Adolfo Gutiérrez Arenas',
+      year: '2018',
+      coverImage: disc4Image,
+      amazonUrl: 'https://ibsclassical.es/producto/dvorak-cello-works/',
+      description: 'Obras para violonchelo de Antonín Dvořák'
     }
   ];
 
@@ -75,6 +120,12 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
+      
+      {/* Sección de Discos de Amazon */}
+      <AmazonDiscs 
+        discs={discs}
+        title="Discografía"
+      />
     </div>
   );
 };

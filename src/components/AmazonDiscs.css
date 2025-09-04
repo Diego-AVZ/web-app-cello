@@ -1,0 +1,284 @@
+/* Sección de discos de Amazon */
+.amazon-discs-section {
+  padding: 80px 20px;
+  background: var(--bg-primary);
+  border-top: 1px solid rgba(205, 133, 63, 0.2);
+}
+
+.discs-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.discs-section-title {
+  color: #cd853f;
+  font-size: 36px;
+  font-weight: 300;
+  font-family: 'Garamond', 'Times New Roman', serif;
+  margin: 0 0 15px 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.discs-section-subtitle {
+  color: #e0e0e0;
+  font-size: 18px;
+  font-family: 'Arial', sans-serif;
+  margin: 0 0 60px 0;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+/* Grid de discos */
+.discs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Para pantallas grandes, mostrar exactamente 4 columnas */
+@media (min-width: 1200px) {
+  .discs-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+  }
+}
+
+/* Tarjeta de disco */
+.disc-card {
+  background: var(--card-bg);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(205, 133, 63, 0.2);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.disc-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border-color: rgba(205, 133, 63, 0.4);
+}
+
+/* Portada del disco */
+.disc-cover {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+}
+
+.disc-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.disc-card:hover .disc-image {
+  transform: scale(1.05);
+}
+
+/* Overlay con botón de Amazon */
+.disc-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.disc-card:hover .disc-overlay {
+  opacity: 1;
+}
+
+/* Botón de tienda */
+.store-button {
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-family: 'Arial', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  min-width: 140px;
+  justify-content: center;
+}
+
+.store-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  filter: brightness(1.1);
+}
+
+.store-button:active {
+  transform: translateY(0);
+}
+
+.store-icon {
+  font-size: 14px;
+}
+
+.store-text {
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+/* Información del disco */
+.disc-info {
+  padding: 25px 20px;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.disc-title {
+  color: #1a1a1a;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'Arial', sans-serif;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.disc-artist {
+  color: #cd853f;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Arial', sans-serif;
+  margin: 0 0 5px 0;
+}
+
+.disc-year {
+  color: #666666;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  margin: 0 0 10px 0;
+  font-weight: 500;
+}
+
+.disc-description {
+  color: #444444;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Footer con disclaimer */
+.discs-footer {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(205, 133, 63, 0.2);
+}
+
+.store-disclaimer {
+  color: #808080;
+  font-size: 12px;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  opacity: 0.7;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .amazon-discs-section {
+    padding: 60px 15px;
+  }
+  
+  .discs-section-title {
+    font-size: 28px;
+  }
+  
+  .discs-section-subtitle {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+  
+  .discs-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+  
+  .disc-cover {
+    height: 250px;
+  }
+  
+  .disc-info {
+    padding: 20px 15px;
+  }
+  
+  .disc-title {
+    font-size: 16px;
+  }
+  
+  .disc-artist {
+    font-size: 14px;
+  }
+  
+  .store-button {
+    padding: 10px 15px;
+    font-size: 12px;
+    min-width: 120px;
+  }
+  
+  .store-text {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .amazon-discs-section {
+    padding: 40px 10px;
+  }
+  
+  .discs-section-title {
+    font-size: 24px;
+  }
+  
+  .discs-section-subtitle {
+    font-size: 14px;
+  }
+  
+  .disc-cover {
+    height: 220px;
+  }
+  
+  .disc-info {
+    padding: 15px 12px;
+  }
+  
+  .store-button {
+    padding: 8px 12px;
+    font-size: 11px;
+    min-width: 100px;
+  }
+  
+  .store-text {
+    font-size: 9px;
+  }
+}

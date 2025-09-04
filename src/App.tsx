@@ -3,10 +3,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import { FontStyleProvider } from './context/FontStyleContext';
 import Navigation from './components/Navigation';
+import BackgroundMusic from './components/BackgroundMusic';
 import Home from './pages/Home';
 import Bio from './pages/Bio';
 import OutTheMusic from './pages/OutTheMusic';
 import Contacto from './pages/Contacto';
+import audioFile from './assets/audio/audio1.mpeg';
 import './App.css';
 
 function App() {
@@ -24,6 +26,12 @@ function App() {
                 <Route path="/contacto" element={<Contacto />} />
               </Routes>
             </main>
+            <BackgroundMusic 
+              src={audioFile}
+              volume={0.3}
+              loop={true}
+              autoPlay={true}
+            />
           </div>
         </Router>
       </FontStyleProvider>
