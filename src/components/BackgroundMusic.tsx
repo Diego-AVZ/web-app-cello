@@ -19,8 +19,6 @@ const BackgroundMusic: React.FC<BackgroundMusicProps> = ({
   const [isMuted, setIsMuted] = useState(false);
   const [currentVolume, setCurrentVolume] = useState(volume);
   const [showStartButton, setShowStartButton] = useState(true);
-  const [autoplayBlocked, setAutoplayBlocked] = useState(false);
-  const [userDeclinedMusic, setUserDeclinedMusic] = useState(false);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -37,11 +35,9 @@ const BackgroundMusic: React.FC<BackgroundMusicProps> = ({
         await audio.play();
         setIsPlaying(true);
         setShowStartButton(false);
-        setAutoplayBlocked(false);
         console.log('Música iniciada automáticamente');
       } catch (error) {
         console.log('Autoplay bloqueado:', error);
-        setAutoplayBlocked(true);
         setShowStartButton(true);
       }
     };
@@ -76,7 +72,6 @@ const BackgroundMusic: React.FC<BackgroundMusicProps> = ({
       await audio.play();
       setIsPlaying(true);
       setShowStartButton(false);
-      setAutoplayBlocked(false);
       console.log('Música iniciada manualmente');
     } catch (error) {
       console.log('Error al iniciar música:', error);
@@ -85,12 +80,10 @@ const BackgroundMusic: React.FC<BackgroundMusicProps> = ({
 
   const closeModal = () => {
     setShowStartButton(false);
-    setUserDeclinedMusic(true);
   };
 
   const declineMusic = () => {
     setShowStartButton(false);
-    setUserDeclinedMusic(true);
     console.log('Usuario declinó la música');
   };
 
