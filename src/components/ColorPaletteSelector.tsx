@@ -24,7 +24,7 @@ interface ColorPalette {
 
 const ColorPaletteSelector: React.FC = () => {
   const themeContext = useContext(ThemeContext);
-
+  
   // Early return if context is not available
   if (!themeContext) {
     return null;
@@ -145,8 +145,8 @@ const ColorPaletteSelector: React.FC = () => {
         shadowColor: 'rgba(205, 133, 63, 0.3)',
         navBg: 'rgba(0, 0, 0, 0.95)',
         cardBg: 'rgba(26, 26, 26, 0.9)'
-      }
-    }
+       }
+     }
   ];
 
   const handlePaletteSelect = (palette: ColorPalette) => {
@@ -162,33 +162,33 @@ const ColorPaletteSelector: React.FC = () => {
       <h3>Paletas de Colores para Neto</h3>
       <p>Estilo Cello: Negro principal con acentos marrón anaranjado</p>
       
-      <div className="palette-grid">
+            <div className="palette-grid">
         {celloPalettes.map((palette) => (
-          <div
-            key={palette.id}
+                <div
+                  key={palette.id}
             className={`palette-option ${palette.type} ${palette.id === 'cello-netos-choice' ? 'recommended' : ''}`}
-            onClick={() => handlePaletteSelect(palette)}
-          >
-            <div className="palette-preview">
-              <div className="color-swatch" style={{ backgroundColor: palette.colors.bgPrimary }}></div>
+                  onClick={() => handlePaletteSelect(palette)}
+                >
+                  <div className="palette-preview">
+                    <div className="color-swatch" style={{ backgroundColor: palette.colors.bgPrimary }}></div>
               <div className="color-swatch" style={{ backgroundColor: palette.colors.bgSecondary }}></div>
-              <div className="color-swatch" style={{ backgroundColor: palette.colors.accentPrimary }}></div>
+                    <div className="color-swatch" style={{ backgroundColor: palette.colors.accentPrimary }}></div>
               <div className="color-swatch" style={{ backgroundColor: palette.colors.borderColor }}></div>
-            </div>
+                  </div>
             <h4>{palette.name}</h4>
             <p className="palette-type">🎻 Cello</p>
             {palette.id === 'cello-netos-choice' && (
               <span className="recommended-badge">⭐ Recomendado</span>
             )}
-          </div>
-        ))}
-      </div>
+                </div>
+              ))}
+            </div>
 
       <div className="palette-actions">
         <button onClick={handleReset} className="reset-button">
           🔄 Restaurar Colores Originales
         </button>
-      </div>
+          </div>
 
       {customColors && (
         <div className="current-palette">
@@ -196,10 +196,10 @@ const ColorPaletteSelector: React.FC = () => {
           <div className="current-colors">
             <div className="color-preview" style={{ backgroundColor: customColors.bgPrimary }}>
               <span>Principal</span>
-            </div>
+                  </div>
             <div className="color-preview" style={{ backgroundColor: customColors.accentPrimary }}>
               <span>Acento</span>
-            </div>
+                </div>
             <div className="color-preview" style={{ backgroundColor: customColors.textPrimary }}>
               <span>Texto</span>
             </div>

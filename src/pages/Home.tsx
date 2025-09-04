@@ -2,7 +2,7 @@ import React from 'react';
 import './Home.css';
 import ImageCarousel from '../components/ImageCarousel';
 import a1Image from '../assets/images/a1.png';
-import a2Image from '../assets/images/a2.jpg';
+import a2Image from '../assets/images/a2.png';
 
 const Home: React.FC = () => {
   // Array de imágenes para el carrusel

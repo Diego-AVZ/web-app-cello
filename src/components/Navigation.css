@@ -45,10 +45,11 @@
   margin: 0;
   color: #cd853f;
   font-size: 28px;
-  font-weight: 600;
-  font-family: 'Georgia', serif;
+  font-weight: 300;
+  font-family: 'Garamond', 'Times New Roman', serif;
   line-height: 1;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.5px;
 }
 
 .logo-surname {
@@ -146,7 +147,8 @@
   }
   
   .logo-name {
-    font-size: 24px;
+    font-size: 30px;
+    font-weight: 100;
   }
   
   .logo-surname {

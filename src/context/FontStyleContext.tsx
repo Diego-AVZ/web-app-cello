@@ -93,11 +93,12 @@ export const FontStyleProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     // Aplicar estilos directamente a elementos específicos
     const logoName = document.querySelector('.logo-name');
     if (logoName) {
-      (logoName as HTMLElement).style.fontFamily = fontStyles.title.fontFamily;
-      (logoName as HTMLElement).style.fontSize = fontStyles.title.fontSize;
-      (logoName as HTMLElement).style.fontWeight = fontStyles.title.fontWeight;
-      (logoName as HTMLElement).style.color = fontStyles.title.color;
-      (logoName as HTMLElement).style.letterSpacing = fontStyles.title.letterSpacing;
+      // Mantener Garamond fino para el logo-name
+      (logoName as HTMLElement).style.fontFamily = 'Garamond, Times New Roman, serif';
+      (logoName as HTMLElement).style.fontSize = '35px';
+      (logoName as HTMLElement).style.fontWeight = '100';
+      (logoName as HTMLElement).style.color = '#cd853f';
+      (logoName as HTMLElement).style.letterSpacing = '0.5px';
     }
 
     const logoSurname = document.querySelector('.logo-surname');
