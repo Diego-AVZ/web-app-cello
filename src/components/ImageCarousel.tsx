@@ -102,26 +102,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
         </div>
       </div>
 
-      {/* Flechas de navegación */}
-      {images.length > 1 && (
-        <>
-          <button 
-            className="carousel-arrow carousel-arrow-left"
-            onClick={prevImage}
-            aria-label="Imagen anterior"
-          >
-            ‹
-          </button>
-          
-          <button 
-            className="carousel-arrow carousel-arrow-right"
-            onClick={nextImage}
-            aria-label="Siguiente imagen"
-          >
-            ›
-          </button>
-        </>
-      )}
+      
 
       {/* Indicadores de puntos */}
       {images.length > 1 && (

@@ -1,18 +1,22 @@
 {
   "files": {
-    "main.css": "/web-app-cello/static/css/main.d007aecf.css",
-    "main.js": "/web-app-cello/static/js/main.10a4f783.js",
+    "main.css": "/web-app-cello/static/css/main.2eda4461.css",
+    "main.js": "/web-app-cello/static/js/main.252ead19.js",
     "static/media/audio1.mpeg": "/web-app-cello/static/media/audio1.e850e47d9c933a9ae84d.mpeg",
+    "static/media/a2.png": "/web-app-cello/static/media/a2.5645fe805ab60c4772e0.png",
+    "static/media/logo_neto.png": "/web-app-cello/static/media/logo_neto.cba1e63c25353c5bd7f4.png",
+    "static/media/a1.png": "/web-app-cello/static/media/a1.05e10c6fe454e633499f.png",
     "static/media/disc4.jpg": "/web-app-cello/static/media/disc4.77b28f7bce8a0176105c.jpg",
     "static/media/disc1.jpg": "/web-app-cello/static/media/disc1.84a369546826879cafaf.jpg",
     "static/media/disc2.webp": "/web-app-cello/static/media/disc2.39bcf593cd96909aae20.webp",
+    "static/media/yt-logo.png": "/web-app-cello/static/media/yt-logo.4f4677b1b0aa581fee6e.png",
     "static/media/disc3.webp": "/web-app-cello/static/media/disc3.f0463c4a9841598c3614.webp",
     "index.html": "/web-app-cello/index.html",
-    "main.d007aecf.css.map": "/web-app-cello/static/css/main.d007aecf.css.map",
-    "main.10a4f783.js.map": "/web-app-cello/static/js/main.10a4f783.js.map"
+    "main.2eda4461.css.map": "/web-app-cello/static/css/main.2eda4461.css.map",
+    "main.252ead19.js.map": "/web-app-cello/static/js/main.252ead19.js.map"
   },
   "entrypoints": [
-    "static/css/main.d007aecf.css",
-    "static/js/main.10a4f783.js"
+    "static/css/main.2eda4461.css",
+    "static/js/main.252ead19.js"
   ]
 }

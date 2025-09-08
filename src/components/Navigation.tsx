@@ -39,13 +39,6 @@ const Navigation: React.FC = () => {
               </li>
             ))}
           </ul>
-          <button 
-            className="text-editor-btn"
-            onClick={() => setIsFontStyleEditorOpen(true)}
-            title="Editor de Estilos de Fuente"
-          >
-            🎨 Estilos
-          </button>
         </div>
       </nav>
       

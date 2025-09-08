@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import './BackgroundMusic.css';
 
 interface BackgroundMusicProps {
@@ -6,19 +6,20 @@ interface BackgroundMusicProps {
   volume?: number;
   loop?: boolean;
   autoPlay?: boolean;
+  onPlayStateChange?: (isPlaying: boolean) => void;
 }
 
 const BackgroundMusic: React.FC<BackgroundMusicProps> = ({
   src,
   volume = 0.3,
   loop = true,
-  autoPlay = true
+  autoPlay = true,
+  onPlayStateChange
 }) => {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [currentVolume, setCurrentVolume] = useState(volume);
-  const [showStartButton, setShowStartButton] = useState(true);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -29,29 +30,51 @@ const BackgroundMusic: React.FC<BackgroundMusicProps> = ({
     audio.loop = loop;
     audio.muted = false; // Asegurar que no esté silenciado
 
-    // Función para intentar reproducir
+    // Función para intentar reproducir automáticamente
     const attemptPlay = async () => {
       try {
         await audio.play();
         setIsPlaying(true);
-        setShowStartButton(false);
-        console.log('Música iniciada automáticamente');
+        console.log('Background music started automatically');
       } catch (error) {
-        console.log('Autoplay bloqueado:', error);
-        setShowStartButton(true);
+        console.log('Autoplay blocked by browser:', error);
+        // Si el autoplay está bloqueado, intentar de nuevo después de una interacción del usuario
+        const handleUserInteraction = async () => {
+          try {
+            await audio.play();
+            setIsPlaying(true);
+            console.log('Background music started after user interaction');
+          } catch (err) {
+            console.log('Still blocked:', err);
+          }
+          document.removeEventListener('click', handleUserInteraction);
+          document.removeEventListener('keydown', handleUserInteraction);
+        };
+        
+        document.addEventListener('click', handleUserInteraction);
+        document.addEventListener('keydown', handleUserInteraction);
       }
     };
 
     // Intentar reproducir automáticamente
     if (autoPlay) {
       // Pequeño delay para asegurar que el DOM esté listo
-      setTimeout(attemptPlay, 100);
+      setTimeout(attemptPlay, 500);
     }
 
     // Event listeners
-    const handlePlay = () => setIsPlaying(true);
-    const handlePause = () => setIsPlaying(false);
-    const handleEnded = () => setIsPlaying(false);
+    const handlePlay = () => {
+      setIsPlaying(true);
+      onPlayStateChange?.(true);
+    };
+    const handlePause = () => {
+      setIsPlaying(false);
+      onPlayStateChange?.(false);
+    };
+    const handleEnded = () => {
+      setIsPlaying(false);
+      onPlayStateChange?.(false);
+    };
 
     audio.addEventListener('play', handlePlay);
     audio.addEventListener('pause', handlePause);
@@ -62,7 +85,7 @@ const BackgroundMusic: React.FC<BackgroundMusicProps> = ({
       audio.removeEventListener('pause', handlePause);
       audio.removeEventListener('ended', handleEnded);
     };
-  }, [autoPlay, loop, currentVolume]);
+  }, [autoPlay, loop, currentVolume, onPlayStateChange]);
 
   const startMusic = async () => {
     const audio = audioRef.current;
@@ -71,20 +94,10 @@ const BackgroundMusic: React.FC<BackgroundMusicProps> = ({
     try {
       await audio.play();
       setIsPlaying(true);
-      setShowStartButton(false);
-      console.log('Música iniciada manualmente');
+      console.log('Background music started manually');
     } catch (error) {
-      console.log('Error al iniciar música:', error);
+      console.log('Error starting music:', error);
     }
-  };
-
-  const closeModal = () => {
-    setShowStartButton(false);
-  };
-
-  const declineMusic = () => {
-    setShowStartButton(false);
-    console.log('Usuario declinó la música');
   };
 
   const togglePlayPause = () => {
@@ -122,6 +135,37 @@ const BackgroundMusic: React.FC<BackgroundMusicProps> = ({
     }
   };
 
+  // Función para pausar desde fuera del componente
+  const pauseMusic = useCallback(() => {
+    const audio = audioRef.current;
+    if (audio && !audio.paused) {
+      audio.pause();
+      setIsPlaying(false);
+      onPlayStateChange?.(false);
+    }
+  }, [onPlayStateChange]);
+
+  // Función para reanudar desde fuera del componente
+  const resumeMusic = () => {
+    const audio = audioRef.current;
+    if (audio && audio.paused) {
+      audio.play().catch(error => {
+        console.log('Could not resume background music:', error);
+      });
+    }
+  };
+
+  // Exponer funciones globalmente para que otros componentes puedan usarlas
+  useEffect(() => {
+    (window as any).pauseBackgroundMusic = pauseMusic;
+    (window as any).resumeBackgroundMusic = resumeMusic;
+    
+    return () => {
+      delete (window as any).pauseBackgroundMusic;
+      delete (window as any).resumeBackgroundMusic;
+    };
+  }, [pauseMusic]);
+
   return (
     <div className="background-music">
       <audio
@@ -130,49 +174,13 @@ const BackgroundMusic: React.FC<BackgroundMusicProps> = ({
         preload="auto"
       />
       
-      {/* Modal de inicio de música */}
-      {showStartButton && (
-        <div className="start-music-overlay">
-          <div className="start-music-content">
-            {/* Botón de cerrar */}
-            <button 
-              className="close-modal-btn"
-              onClick={closeModal}
-              title="Cerrar"
-            >
-              ✕
-            </button>
-            
-            <div className="modal-header">
-              <h3>🎵 ¡Bienvenido a mi sitio web!</h3>
-              <p>¿Te gustaría escuchar música de fondo mientras navegas?</p>
-            </div>
-            
-            <div className="modal-buttons">
-              <button 
-                className="start-music-btn primary"
-                onClick={startMusic}
-              >
-                ▶️ Sí, iniciar música
-              </button>
-              
-              <button 
-                className="decline-music-btn secondary"
-                onClick={declineMusic}
-              >
-                🚫 No, acceder sin música
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
       
       {/* Controles de música */}
-      <div className={`music-controls ${showStartButton ? 'hidden' : ''}`}>
+      <div className="music-controls">
         <button 
           className={`music-btn play-pause-btn ${isPlaying ? 'playing' : ''}`}
           onClick={togglePlayPause}
-          title={isPlaying ? 'Pausar música' : 'Reproducir música'}
+          title={isPlaying ? 'Pause music' : 'Play music'}
         >
           {isPlaying ? '⏸️' : '▶️'}
         </button>
@@ -180,7 +188,7 @@ const BackgroundMusic: React.FC<BackgroundMusicProps> = ({
         <button 
           className="music-btn mute-btn"
           onClick={toggleMute}
-          title={isMuted ? 'Activar sonido' : 'Silenciar'}
+          title={isMuted ? 'Unmute' : 'Mute'}
         >
           {isMuted ? '🔇' : '🔊'}
         </button>
@@ -194,7 +202,7 @@ const BackgroundMusic: React.FC<BackgroundMusicProps> = ({
             value={isMuted ? 0 : currentVolume}
             onChange={handleVolumeChange}
             className="volume-slider"
-            title="Control de volumen"
+            title="Volume control"
           />
         </div>
       </div>

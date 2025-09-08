@@ -107,33 +107,6 @@
   box-shadow: 0 0 8px rgba(222, 184, 135, 0.4);
 }
 
-.text-editor-btn {
-  background: linear-gradient(135deg, #cd853f 0%, #deb887 100%);
-  color: #000000;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-family: 'Arial', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: 0 2px 8px rgba(205, 133, 63, 0.3);
-  min-width: 120px;
-  justify-content: center;
-}
-
-.text-editor-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(205, 133, 63, 0.4);
-}
-
-.text-editor-btn:active {
-  transform: translateY(0);
-}
 
 /* Responsive design */
 @media (max-width: 768px) {
@@ -160,8 +133,4 @@
     height: 40px;
   }
   
-  .text-editor-btn {
-    width: 100%;
-    justify-content: center;
-  }
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import './Home.css';
 import ImageCarousel from '../components/ImageCarousel';
 import AmazonDiscs from '../components/AmazonDiscs';
+import MultimediaPlayer from '../components/MultimediaPlayer';
 import a1Image from '../assets/images/a1.png';
 import a2Image from '../assets/images/a2.png';
 import disc1Image from '../assets/images/disc1.jpg';
@@ -125,6 +126,11 @@ const Home: React.FC = () => {
       <AmazonDiscs 
         discs={discs}
         title="Discografía"
+      />
+      
+      {/* Sección de Contenido Multimedia */}
+      <MultimediaPlayer 
+        title="Contenido Multimedia"
       />
     </div>
   );
