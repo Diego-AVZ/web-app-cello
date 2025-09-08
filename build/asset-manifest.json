@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/web-app-cello/static/css/main.d007aecf.css",
+    "main.js": "/web-app-cello/static/js/main.10a4f783.js",
+    "static/media/audio1.mpeg": "/web-app-cello/static/media/audio1.e850e47d9c933a9ae84d.mpeg",
+    "static/media/disc4.jpg": "/web-app-cello/static/media/disc4.77b28f7bce8a0176105c.jpg",
+    "static/media/disc1.jpg": "/web-app-cello/static/media/disc1.84a369546826879cafaf.jpg",
+    "static/media/disc2.webp": "/web-app-cello/static/media/disc2.39bcf593cd96909aae20.webp",
+    "static/media/disc3.webp": "/web-app-cello/static/media/disc3.f0463c4a9841598c3614.webp",
+    "index.html": "/web-app-cello/index.html",
+    "main.d007aecf.css.map": "/web-app-cello/static/css/main.d007aecf.css.map",
+    "main.10a4f783.js.map": "/web-app-cello/static/js/main.10a4f783.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d007aecf.css",
+    "static/js/main.10a4f783.js"
+  ]
+}
