@@ -1,0 +1,629 @@
+/* Bio Page Styles */
+.bio-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  color: var(--text-primary);
+}
+
+/* Hero Section */
+.bio-hero {
+  padding: 80px 0 60px;
+  background: linear-gradient(135deg, 
+    rgba(139, 69, 19, 0.1) 0%, 
+    rgba(205, 133, 63, 0.05) 50%, 
+    rgba(0, 0, 0, 0.8) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.bio-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23cd853f" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23cd853f" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="%23cd853f" opacity="0.05"/><circle cx="10" cy="60" r="0.5" fill="%23cd853f" opacity="0.05"/><circle cx="90" cy="40" r="0.5" fill="%23cd853f" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.bio-hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.bio-hero-text {
+  animation: fadeInUp 1s ease-out;
+}
+
+.bio-title {
+  font-family: 'Garamond', 'Times New Roman', serif;
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: var(--accent-primary);
+  margin: 0 0 20px 0;
+  letter-spacing: 2px;
+  line-height: 1.1;
+}
+
+.bio-subtitle {
+  font-size: 1.4rem;
+  color: var(--text-secondary);
+  margin: 0 0 30px 0;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.bio-highlight {
+  background: linear-gradient(135deg, 
+    rgba(205, 133, 63, 0.1) 0%, 
+    rgba(139, 69, 19, 0.1) 100%);
+  border-left: 4px solid var(--accent-primary);
+  padding: 25px 30px;
+  border-radius: 0 15px 15px 0;
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+
+.bio-highlight::before {
+  content: '"';
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  font-size: 4rem;
+  color: var(--accent-primary);
+  opacity: 0.3;
+  font-family: 'Garamond', serif;
+}
+
+.highlight-text {
+  display: block;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.highlight-author {
+  display: block;
+  font-size: 1rem;
+  color: var(--accent-primary);
+  font-weight: 500;
+  text-align: right;
+}
+
+/* Hero Image */
+.bio-hero-image {
+  animation: fadeInRight 1s ease-out 0.3s both;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(135deg, 
+    rgba(205, 133, 63, 0.1) 0%, 
+    rgba(139, 69, 19, 0.2) 100%);
+  border: 2px dashed var(--accent-primary);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+}
+
+.image-placeholder::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, 
+    transparent 30%, 
+    rgba(205, 133, 63, 0.1) 50%, 
+    transparent 70%);
+  animation: shimmer 3s infinite;
+}
+
+.placeholder-content {
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+.placeholder-icon {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 15px;
+  opacity: 0.7;
+}
+
+.placeholder-text {
+  font-size: 1.1rem;
+  color: var(--accent-primary);
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/* Main Content */
+.bio-content {
+  padding: 80px 0;
+}
+
+.bio-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.bio-section {
+  margin-bottom: 80px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.section-title {
+  font-family: 'Garamond', 'Times New Roman', serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: var(--accent-primary);
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+  letter-spacing: 1px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    var(--accent-primary) 0%, 
+    var(--accent-secondary) 100%);
+  border-radius: 2px;
+}
+
+/* Career Highlights */
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.highlight-card {
+  background: linear-gradient(135deg, 
+    rgba(26, 26, 26, 0.8) 0%, 
+    rgba(45, 45, 45, 0.6) 100%);
+  border: 1px solid rgba(205, 133, 63, 0.2);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.highlight-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(205, 133, 63, 0.1) 50%, 
+    transparent 100%);
+  transition: left 0.6s ease;
+}
+
+.highlight-card:hover::before {
+  left: 100%;
+}
+
+.highlight-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent-primary);
+  box-shadow: 0 20px 40px rgba(205, 133, 63, 0.2);
+}
+
+.highlight-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.highlight-card h3 {
+  font-size: 1.4rem;
+  color: var(--accent-primary);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.highlight-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Biography Text */
+.bio-text-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.bio-paragraph {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 25px;
+  text-align: justify;
+  text-indent: 2rem;
+}
+
+.bio-paragraph:first-child {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* International Tours */
+.tours-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.tours-text {
+  max-width: none;
+}
+
+.venues-list {
+  background: linear-gradient(135deg, 
+    rgba(26, 26, 26, 0.8) 0%, 
+    rgba(45, 45, 45, 0.6) 100%);
+  border: 1px solid rgba(205, 133, 63, 0.2);
+  border-radius: 20px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+}
+
+.venues-list h3 {
+  color: var(--accent-primary);
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.venues-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.venues-grid li {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(205, 133, 63, 0.1);
+  color: var(--text-secondary);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.venues-grid li:last-child {
+  border-bottom: none;
+}
+
+.venues-grid li:hover {
+  color: var(--accent-primary);
+  padding-left: 10px;
+}
+
+/* Collaborations */
+.collaborations-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.conductors-section h3,
+.recordings-section h3 {
+  color: var(--accent-primary);
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.conductors-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.conductor-tag {
+  background: linear-gradient(135deg, 
+    rgba(205, 133, 63, 0.2) 0%, 
+    rgba(139, 69, 19, 0.2) 100%);
+  border: 1px solid var(--accent-primary);
+  border-radius: 25px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.conductor-tag:hover {
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+  transform: translateY(-2px);
+}
+
+.recordings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.recording-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(135deg, 
+    rgba(26, 26, 26, 0.6) 0%, 
+    rgba(45, 45, 45, 0.4) 100%);
+  border: 1px solid rgba(205, 133, 63, 0.2);
+  border-radius: 15px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.recording-item:hover {
+  border-color: var(--accent-primary);
+  transform: translateX(10px);
+}
+
+.recording-icon {
+  font-size: 2rem;
+  opacity: 0.8;
+}
+
+.recording-info h4 {
+  color: var(--accent-primary);
+  margin: 0 0 5px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.recording-info p {
+  color: var(--text-secondary);
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Instrument Section */
+.instrument-section {
+  background: linear-gradient(135deg, 
+    rgba(139, 69, 19, 0.05) 0%, 
+    rgba(205, 133, 63, 0.05) 100%);
+  border-radius: 30px;
+  padding: 50px;
+  border: 1px solid rgba(205, 133, 63, 0.1);
+}
+
+.instrument-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.instrument-info {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  background: linear-gradient(135deg, 
+    rgba(26, 26, 26, 0.8) 0%, 
+    rgba(45, 45, 45, 0.6) 100%);
+  border: 1px solid rgba(205, 133, 63, 0.2);
+  border-radius: 25px;
+  padding: 40px;
+  backdrop-filter: blur(10px);
+}
+
+.instrument-icon {
+  font-size: 4rem;
+  opacity: 0.8;
+  flex-shrink: 0;
+}
+
+.instrument-details h3 {
+  color: var(--accent-primary);
+  font-size: 1.8rem;
+  margin: 0 0 15px 0;
+  font-weight: 600;
+}
+
+.instrument-description {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.instrument-specs {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.spec-item {
+  background: rgba(205, 133, 63, 0.1);
+  border: 1px solid rgba(205, 133, 63, 0.3);
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  color: var(--accent-primary);
+  font-weight: 500;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .bio-hero-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .bio-hero-image {
+    order: -1;
+  }
+  
+  .image-placeholder {
+    height: 300px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .tours-content,
+  .collaborations-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .instrument-info {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bio-hero {
+    padding: 60px 0 40px;
+  }
+  
+  .bio-title {
+    font-size: 2.5rem;
+  }
+  
+  .bio-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .highlights-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .highlight-card {
+    padding: 30px 20px;
+  }
+  
+  .bio-paragraph {
+    font-size: 1rem;
+    text-indent: 1rem;
+  }
+  
+  .bio-paragraph:first-child {
+    font-size: 1.1rem;
+  }
+  
+  .instrument-section {
+    padding: 30px 20px;
+  }
+  
+  .instrument-info {
+    padding: 30px 20px;
+  }
+  
+  .instrument-specs {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .bio-title {
+    font-size: 2rem;
+  }
+  
+  .bio-subtitle {
+    font-size: 1rem;
+  }
+  
+  .bio-highlight {
+    padding: 20px;
+  }
+  
+  .highlight-text {
+    font-size: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .conductor-tag {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+  
+  .recording-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+}

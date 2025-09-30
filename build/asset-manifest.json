@@ -1,22 +1,30 @@
 {
   "files": {
-    "main.css": "/web-app-cello/static/css/main.2eda4461.css",
-    "main.js": "/web-app-cello/static/js/main.252ead19.js",
+    "main.css": "/web-app-cello/static/css/main.d8e1d34d.css",
+    "main.js": "/web-app-cello/static/js/main.dbeece58.js",
     "static/media/audio1.mpeg": "/web-app-cello/static/media/audio1.e850e47d9c933a9ae84d.mpeg",
+    "static/media/20240920_155432.jpg": "/web-app-cello/static/media/20240920_155432.53f405871e6b0fcba32d.jpg",
+    "static/media/20250210_173620.jpg": "/web-app-cello/static/media/20250210_173620.970c3db9bf6d7fc3b140.jpg",
     "static/media/a2.png": "/web-app-cello/static/media/a2.5645fe805ab60c4772e0.png",
     "static/media/logo_neto.png": "/web-app-cello/static/media/logo_neto.cba1e63c25353c5bd7f4.png",
     "static/media/a1.png": "/web-app-cello/static/media/a1.05e10c6fe454e633499f.png",
+    "static/media/IMG-20231013-WA0026.jpg": "/web-app-cello/static/media/IMG-20231013-WA0026.340e3bae9de998ea10d3.jpg",
+    "static/media/IMG-20250828-WA0015.jpg": "/web-app-cello/static/media/IMG-20250828-WA0015.5dffe338a3602ead85b4.jpg",
+    "static/media/IMG-20250828-WA0003.jpg": "/web-app-cello/static/media/IMG-20250828-WA0003.dc7177d37c10147ff9df.jpg",
+    "static/media/IMG-20250828-WA0007.jpg": "/web-app-cello/static/media/IMG-20250828-WA0007.4ad533c47903b3b3d2fe.jpg",
     "static/media/disc4.jpg": "/web-app-cello/static/media/disc4.77b28f7bce8a0176105c.jpg",
     "static/media/disc1.jpg": "/web-app-cello/static/media/disc1.84a369546826879cafaf.jpg",
+    "static/media/IMG-20250618-WA0009.jpg": "/web-app-cello/static/media/IMG-20250618-WA0009.45a50e76e843df6e065a.jpg",
     "static/media/disc2.webp": "/web-app-cello/static/media/disc2.39bcf593cd96909aae20.webp",
     "static/media/yt-logo.png": "/web-app-cello/static/media/yt-logo.4f4677b1b0aa581fee6e.png",
+    "static/media/FB_IMG_1756722524195.jpg": "/web-app-cello/static/media/FB_IMG_1756722524195.e504969febe00b9cb545.jpg",
     "static/media/disc3.webp": "/web-app-cello/static/media/disc3.f0463c4a9841598c3614.webp",
     "index.html": "/web-app-cello/index.html",
-    "main.2eda4461.css.map": "/web-app-cello/static/css/main.2eda4461.css.map",
-    "main.252ead19.js.map": "/web-app-cello/static/js/main.252ead19.js.map"
+    "main.d8e1d34d.css.map": "/web-app-cello/static/css/main.d8e1d34d.css.map",
+    "main.dbeece58.js.map": "/web-app-cello/static/js/main.dbeece58.js.map"
   },
   "entrypoints": [
-    "static/css/main.2eda4461.css",
-    "static/js/main.252ead19.js"
+    "static/css/main.d8e1d34d.css",
+    "static/js/main.dbeece58.js"
   ]
 }

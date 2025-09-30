@@ -7,6 +7,7 @@ import BackgroundMusic from './components/BackgroundMusic';
 import Home from './pages/Home';
 import Bio from './pages/Bio';
 import OutTheMusic from './pages/OutTheMusic';
+import ImagesPage from './pages/ImagesPage';
 import Contacto from './pages/Contacto';
 import audioFile from './assets/audio/audio1.mpeg';
 import './App.css';
@@ -23,6 +24,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/bio" element={<Bio />} />
                 <Route path="/out-the-music" element={<OutTheMusic />} />
+                <Route path="/images" element={<ImagesPage />} />
                 <Route path="/contacto" element={<Contacto />} />
               </Routes>
             </main>

@@ -12,6 +12,7 @@ const Navigation: React.FC = () => {
     { path: '/', label: 'Inicio' },
     { path: '/bio', label: 'BIO' },
     { path: '/out-the-music', label: 'Out the music' },
+    { path: '/images', label: 'Images' },
     { path: '/contacto', label: 'Contact ▼' }
   ];
 //

@@ -206,6 +206,11 @@
   animation: fadeIn 0.5s ease-in-out;
 }
 
+/* Contenido específico de YouTube con fondo blanco */
+.platform-content.youtube-content {
+  background: white;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

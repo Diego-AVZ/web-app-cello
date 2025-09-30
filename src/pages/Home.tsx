@@ -3,12 +3,14 @@ import './Home.css';
 import ImageCarousel from '../components/ImageCarousel';
 import AmazonDiscs from '../components/AmazonDiscs';
 import MultimediaPlayer from '../components/MultimediaPlayer';
+import BackgroundMusic from '../components/BackgroundMusic';
 import a1Image from '../assets/images/a1.png';
 import a2Image from '../assets/images/a2.png';
 import disc1Image from '../assets/images/disc1.jpg';
 import disc2Image from '../assets/images/disc2.webp';
 import disc3Image from '../assets/images/disc3.webp';
 import disc4Image from '../assets/images/disc4.jpg';
+import backgroundMusicFile from '../assets/audio/audio1.mpeg';
 
 const Home: React.FC = () => {
   // Array de imágenes para el carrusel
@@ -71,17 +73,23 @@ const Home: React.FC = () => {
 
   return (
     <div className="home">
+      {/* Música de fondo */}
+      <BackgroundMusic 
+        src={backgroundMusicFile}
+        volume={0.3}
+        loop={true}
+        autoPlay={true}
+      />
+      
       <div className="home-container">
         {/* Columna Izquierda */}
         <div className="left-column">
           <div className="text-section">
             <h2 className="section-title">Texto vacío</h2>
             <blockquote className="main-quote">
-              "Arenas gave the Laló Concerto more than a fair chance to impress. He is a fine cellist and there is no showman playing or dramatic bow releases. The world that came to mind as he played was: aristocratic. His performance was a hit with the audience and the orquestra members as well"
-            </blockquote>
+              Cellist Adolfo Gutierrez Arenas’ impassioned voice made an immediate arresting impression with more than a hint of the pathos heard in the great cellists of the past, e.g., Casals and du Pré.            </blockquote>
             <div className="quote-attribution">
-              <p>Laló Concerto, Fort Worth Symphony</p>
-              <p>GREG SULLIVAN, Theater Jones</p>
+              <p>Herald Tribune</p>
             </div>
           </div>
           
