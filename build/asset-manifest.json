@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/web-app-cello/static/css/main.d8e1d34d.css",
-    "main.js": "/web-app-cello/static/js/main.dbeece58.js",
+    "main.css": "/web-app-cello/static/css/main.31b67879.css",
+    "main.js": "/web-app-cello/static/js/main.0294e10c.js",
     "static/media/audio1.mpeg": "/web-app-cello/static/media/audio1.e850e47d9c933a9ae84d.mpeg",
     "static/media/20240920_155432.jpg": "/web-app-cello/static/media/20240920_155432.53f405871e6b0fcba32d.jpg",
     "static/media/20250210_173620.jpg": "/web-app-cello/static/media/20250210_173620.970c3db9bf6d7fc3b140.jpg",
@@ -20,11 +20,11 @@
     "static/media/FB_IMG_1756722524195.jpg": "/web-app-cello/static/media/FB_IMG_1756722524195.e504969febe00b9cb545.jpg",
     "static/media/disc3.webp": "/web-app-cello/static/media/disc3.f0463c4a9841598c3614.webp",
     "index.html": "/web-app-cello/index.html",
-    "main.d8e1d34d.css.map": "/web-app-cello/static/css/main.d8e1d34d.css.map",
-    "main.dbeece58.js.map": "/web-app-cello/static/js/main.dbeece58.js.map"
+    "main.31b67879.css.map": "/web-app-cello/static/css/main.31b67879.css.map",
+    "main.0294e10c.js.map": "/web-app-cello/static/js/main.0294e10c.js.map"
   },
   "entrypoints": [
-    "static/css/main.d8e1d34d.css",
-    "static/js/main.dbeece58.js"
+    "static/css/main.31b67879.css",
+    "static/js/main.0294e10c.js"
   ]
 }

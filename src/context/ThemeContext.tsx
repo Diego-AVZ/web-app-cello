@@ -50,9 +50,21 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const [customColors, setCustomColors] = useState<CustomColors | null>(() => {
     const saved = localStorage.getItem('customColors');
     if (saved) {
-      return JSON.parse(saved);
+      const parsed = JSON.parse(saved);
+      // Si detectamos los colores morados antiguos, los reemplazamos con naranjas
+      if (parsed.accentPrimary === '#8b5cf6' || parsed.accentPrimary === '#7b55ea') {
+        const newColors = {
+          ...parsed,
+          accentPrimary: '#cd853f',
+          accentSecondary: '#deb887',
+          shadowColor: 'rgba(205, 133, 63, 0.2)'
+        };
+        localStorage.setItem('customColors', JSON.stringify(newColors));
+        return newColors;
+      }
+      return parsed;
     }
-    // Estilo inicial por defecto: Clásico Púrpura Oscuro
+    // Estilo inicial por defecto: Elegante Naranja/Dorado
     return {
       bgPrimary: '#000000',
       bgSecondary: '#111111',
@@ -60,10 +72,10 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
       textPrimary: '#ffffff',
       textSecondary: '#e0e0e0',
       textMuted: '#a0a0a0',
-      accentPrimary: '#8b5cf6',
-      accentSecondary: '#a78bfa',
+      accentPrimary: '#cd853f',
+      accentSecondary: '#deb887',
       borderColor: '#333333',
-      shadowColor: 'rgba(139, 92, 246, 0.2)',
+      shadowColor: 'rgba(205, 133, 63, 0.2)',
       navBg: 'rgba(0, 0, 0, 0.95)',
       cardBg: '#000000' // Cajas negras por defecto
     };
